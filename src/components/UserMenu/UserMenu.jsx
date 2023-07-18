@@ -14,6 +14,7 @@ const UserMenu = () => {
       <p className={styles.title}>Welcome, {user.name}</p>
       <Button
         variant="contained"
+        color="success"
         type="button"
         onClick={() => dispatch(logOutOperation())}
         endIcon={<LogoutOutlinedIcon fontSize="small" />}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   Stack,
@@ -9,22 +9,22 @@ import {
   InputAdornment,
   IconButton,
   Button,
-} from '@mui/material';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { useDispatch } from 'react-redux';
-import { registeredOperation } from '../../redux/auth/operation';
+} from "@mui/material";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { useDispatch } from "react-redux";
+import { registeredOperation } from "../../redux/auth/operation";
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = React.useState(false);
-  const handleClickShowPassword = () => setShowPassword(show => !show);
-  const handleMouseDownPassword = event => {
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
 
   const dispatch = useDispatch();
 
-  const onFormSubmit = e => {
+  const onFormSubmit = (e) => {
     e.preventDefault();
     const name = e.currentTarget.elements.username.value;
     const email = e.currentTarget.elements.email.value;
@@ -35,13 +35,15 @@ const RegisterForm = () => {
 
   return (
     <Box onSubmit={onFormSubmit} component="form" autoComplete="off">
-      <Stack direction={'column'} spacing={2}>
+      <Stack direction={"column"} spacing={2}>
         <TextField
           fullWidth
           required
           id="outlined-required"
           label="Username"
           name="username"
+          variant="filled"
+          color="success"
         />
         <TextField
           fullWidth
@@ -49,16 +51,20 @@ const RegisterForm = () => {
           id="outlined-required"
           label="Email"
           name="email"
+          variant="filled"
+          color="success"
         />
         <FormControl required fullWidth variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">
+          <InputLabel htmlFor="outlined-adornment-password" color="success">
             Password
           </InputLabel>
           <OutlinedInput
             required
             id="outlined-adornment-password"
             name="password"
-            type={showPassword ? 'text' : 'password'}
+            variant="filled"
+            color="success"
+            type={showPassword ? "text" : "password"}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -74,7 +80,7 @@ const RegisterForm = () => {
             label="Password"
           />
         </FormControl>
-        <Button variant="contained" type="submit">
+        <Button variant="contained" color="success" type="submit">
           Register
         </Button>
       </Stack>

@@ -1,17 +1,16 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import {
   selectfilteredContacts,
   selectLoading,
-} from '../../redux/contacts/selectors';
-import { useEffect } from 'react';
-import { Button, CircularProgress } from '@mui/material';
-import DeleteIcon from "@mui/icons-material/Delete"
-import styles from './ContactList.module.css';
+} from "../../redux/contacts/selectors";
+import { useEffect } from "react";
+import { Button, CircularProgress } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import styles from "./ContactList.module.css";
 import {
   getContactsOperation,
   deleteContactOperation,
-} from '../../redux/contacts/operations';
-
+} from "../../redux/contacts/operations";
 
 const ContactList = () => {
   const loading = useSelector(selectLoading);
@@ -32,9 +31,10 @@ const ContactList = () => {
                 {name}: {number}
               </p>
               <Button
-              size="small"
-              variant="outlined"
-              startIcon={<DeleteIcon />}
+                size="small"
+                variant="contained"
+                color="success"
+                startIcon={<DeleteIcon />}
                 type="button"
                 onClick={() => dispatch(deleteContactOperation(id))}
               >
@@ -43,7 +43,7 @@ const ContactList = () => {
             </li>
           ))}
       </ul>
-      {loading && <CircularProgress/>}
+      {loading && <CircularProgress />}
     </>
   );
 };

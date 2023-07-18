@@ -16,13 +16,14 @@ const Filter = () => {
             </InputAdornment>
           ),
         }}
-        onChange={e => dispatch(setFilter(e))}
+        onChange={(e) => dispatch(setFilter(e))}
         fullWidth
         id="input-with-icon-textfield"
         placeholder="Search by name"
         type="text"
         variant="standard"
         name="filter"
+        color="success"
       />
     </>
   );

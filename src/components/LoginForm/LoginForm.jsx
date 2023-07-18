@@ -32,45 +32,47 @@ const onFormSubmit = e => {
     dispatch(logInOperation(userInfo))
 }
 return (
-    <Box onSubmit={onFormSubmit} component="form" autoComplete="off">
-      <Stack direction={'column'} spacing={2}>
-        <TextField
-          fullWidth
+  <Box onSubmit={onFormSubmit} component="form" autoComplete="off">
+    <Stack direction={"column"} spacing={2}>
+      <TextField
+        fullWidth
+        required
+        id="outlined-required"
+        label="Email"
+        name="email"
+        color="success"
+      />
+      <FormControl required fullWidth variant="outlined">
+        <InputLabel htmlFor="outlined-adornment-password" color="success">
+          Password
+        </InputLabel>
+        <OutlinedInput
           required
-          id="outlined-required"
-          label="Email"
-          name="email"
+          id="outlined-adornment-password"
+          name="password"
+          color="success"
+          type={showPassword ? "text" : "password"}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+                edge="end"
+              >
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          }
+          label="Password"
         />
-        <FormControl required fullWidth variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">
-            Password
-          </InputLabel>
-          <OutlinedInput
-            required
-            id="outlined-adornment-password"
-            name="password"
-            type={showPassword ? 'text' : 'password'}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-          />
-        </FormControl>
-        <Button variant="contained" type="submit">
-          Log In
-        </Button>
-      </Stack>
-    </Box>
-  );
+      </FormControl>
+      <Button variant="contained" color="success" type="submit">
+        Log In
+      </Button>
+    </Stack>
+  </Box>
+);
 
 
 };
