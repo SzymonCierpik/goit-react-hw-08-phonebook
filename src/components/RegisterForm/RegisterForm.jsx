@@ -13,7 +13,7 @@ import {
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useDispatch } from 'react-redux';
-import { registeredOperation } from "../../redux/auth/operation";
+import { registeredOperation } from '../../redux/auth/operation';
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = React.useState(false);

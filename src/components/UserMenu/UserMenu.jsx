@@ -11,14 +11,14 @@ const UserMenu = () => {
 
   return (
     <div className={styles.wrapper}>
-      <p className={styles.title}>Witaj, {user.name}</p>
+      <p className={styles.title}>Welcome, {user.name}</p>
       <Button
         variant="contained"
         type="button"
         onClick={() => dispatch(logOutOperation())}
         endIcon={<LogoutOutlinedIcon fontSize="small" />}
       >
-        Wyloguj
+        Logout
       </Button>
     </div>
   );

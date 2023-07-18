@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { TextField, InputAdornment } from '@mui/material';
 import ContentPasteSearchOutlinedIcon from '@mui/icons-material/ContentPasteSearchOutlined';
-import { setFilter } from "../../redux/contacts/filterSlice";
+import { setFilter } from '../../redux/contacts/filterSlice';
 
 const Filter = () => {
   const dispatch = useDispatch();

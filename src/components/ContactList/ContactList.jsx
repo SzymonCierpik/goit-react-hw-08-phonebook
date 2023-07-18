@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   selectfilteredContacts,
   selectLoading,
-} from "../../redux/contacts/selectors";
+} from '../../redux/contacts/selectors';
 import { useEffect } from 'react';
 import { Button, CircularProgress } from '@mui/material';
 import DeleteIcon from "@mui/icons-material/Delete"
