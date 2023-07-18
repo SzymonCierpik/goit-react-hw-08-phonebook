@@ -9,7 +9,10 @@ const HomePage = () => {
       alignItems={"center"}
       spacing={3}
     >
-      <ContactPhoneIcon color="primary" sx={{ fontSize: 250 }} />
+      <ContactPhoneIcon
+        color="primary"
+        sx={{ fontSize: 500, color: "red" }}
+      />
     </Stack>
   );
 };

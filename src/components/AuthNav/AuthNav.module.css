@@ -11,9 +11,9 @@
   }
   
   .link:hover {
-    color: #1976d2;
+    color: red;
   }
   
   .active {
-    color: #1976d2;
+    color: red;
   }
